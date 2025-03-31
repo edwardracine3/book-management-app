@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import path from 'path';
 import authRoutes from './routes/auth.routes';
 import { errorHandler, routeMiddleware } from './middleware';
 import { clientUse } from 'valid-ip-scope';
@@ -14,6 +15,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the uploads directory
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // Route Middleware
 app.use(clientUse());

@@ -7,6 +7,7 @@ import {
   updateBook, 
   deleteBook 
 } from '../controllers';
+import { upload } from '../utils';
 
 const router = express.Router();
 
@@ -17,8 +18,8 @@ router.use(authenticate);
 // Books routes
 router.get('/', getBooks);
 router.get('/:id', getBookById);
-router.post('/', createBook);
-router.put('/:id', updateBook);
+router.post('/', upload.single('coverImage'), createBook);
+router.put('/:id', upload.single('coverImage'), updateBook);
 router.delete('/:id', deleteBook);
 
 //TO-DO
