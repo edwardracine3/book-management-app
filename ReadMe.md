@@ -48,3 +48,11 @@ A full-stack application for managing book collections with user authentication.
 ### Testing
 - Import `Book Management App.postman_collection.json` into Postman
 - For protected routes, set Authorization header: `Bearer your_jwt_token`
+
+## Examples screenshots
+
+![Book Management Login](./login.png)
+![Book Management RegisterUser](./register.png)
+![Book Management Dashbaord](./dashboard.png)
+![Book Management EditBook](./edit.png)
+![Book Management AddBook](./add.png)
